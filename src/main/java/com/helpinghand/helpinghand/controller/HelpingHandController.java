@@ -46,4 +46,13 @@ public void m1()
 {
 	System.out.println("--------------------------");
 }
+
+@GetMapping("/logout")
+public String getLogout()
+{
+	
+	System.out.println("--------------------------");
+	return "i am logedout";
+}
+
 }
