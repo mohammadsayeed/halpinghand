@@ -1,8 +1,10 @@
 package com.helpinghand.helpinghand;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
@@ -10,6 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages="com")
 @EnableJpaRepositories({"com.helpinghand.repository"})
 @EntityScan("com.helpinghand.entity")
+@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 public class HelpinghandApplication {
 
 	public static void main(String[] args) {
